@@ -1,23 +1,71 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE HTML>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Números</title>
+	<meta charset="UTF-8">
+	<title>Conversor Números</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<link rel="icon" type="image/png" href="icon.png" />
+
+
+	
+	<style type="text/css">
+	
+		input{
+			text-align: center;
+		}
+		
+		input[type="text"]{
+			font-size:30px; 
+			font-family: "Cinzel", Cinzel;
+			font-weight: bold;
+			color: #000 !important;
+		}
+		
+		hr{
+			margin-top: 70px;
+		}
+	
+	</style>
 </head>
 <body>
 
-    <h1>Tarefa 1. Conversor de números romanos/arábicos</h1>
-     <form>
-        <input type="number" placeholder="Arábico">
-        <input type="number" placeholder="Romano">
-     </form>
+<div class="container">
+	<div class="row">
+		<h4>Conversor de Números</h4>
+	</div>
+	
+	<div class="row">
+		<div class="input-field col s12">
+			<label for="decimal" class="active">Número Arábico:</label>
+			<input type="tel" placeholder="Informe um número arábico" id="decimal" autofocus maxlength="4">
+		</div>
+		
+		<div class="input-field col s12">
+			<label for="roman" class="active">Número Romano:</label>
+			<input type="text" class="roman" id="roman" readonly="readonly">
+		</div>
+	</div>
 
-     <form>
-        <input type="number" placeholder="Romano">
-        <input type="number" placeholder="Arábico">
-     </form>
+	<div class="row">
+		<div class="input-field col s12">
+			<label for="decimal" class="active">Número Romano:</label>
+			<input type="tel" placeholder="Informe um número romano" id="decimal" autofocus maxlength="4">
+		</div>
+		
+		<div class="input-field col s12">
+			<label for="roman" class="active">Numero Arábico:</label>
+			<input type="text" class="roman" id="roman" readonly="readonly">
+		</div>
+	</div>
 
+	</div>
+	
+	<hr />
+	
+</div>
 </body>
+<script src="/script.js"></script>
 </html>
