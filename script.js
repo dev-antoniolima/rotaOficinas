@@ -122,17 +122,55 @@ function romanJs(input) {
     var finalCast = '';
     for (var i = unidadeDezenaCentena; i >= 0; i--) {
         var auxVar = parseInt(newOrder.charAt(i));
-        finalCast = finalCast + numero[i][auxVar];
+        finalCast = finalCast + numeroRomano[i][auxVar];
     }
 
     return finalCast;
+
+    
+}
+
+function romanJss(input) {
+
+    input = input.replace(/[^0-9]/, "");
+    if (input == '') return '';
+
+    var number = parseInt(input);
+
+    if (number > 1999) {
+        return "número maximo '1999'";
+    }
+
+
+    //Descobre se é Unidade, Dezena, Centana, Milhar
+    var orderNumber2 = Number(input).toString();
+    var orderLength2 = orderNumber2.length;
+
+
+    var unidadeDezenaCentena = orderLength2 - 1;
+
+
+    var newOrder2 = '';
+    for (var i = unidadeDezenaCentena2; i >= 0; i--) {
+        newOrder2 = newOrder2+ orderNumber.charAt(i);
+    }
+
+    var finalCast2 = '';
+    for (var i = unidadeDezenaCentena; i >= 0; i--) {
+        var auxVar2 = parseInt(newOrder.charAt(i));
+        finalCast2 = finalCast + numeroArabico[i][auxVar2];
+    }
+
+    return finalCast;
+
+    
 }
 
 //var numberToCast = 100;
 //var result = romanJs(numberToCast);
 
 document.getElementById("decimal").addEventListener('keyup', function () {
-    var romanNumber = romanJs(this.value);
+    var romanNumber = romanJss(this.value);
 
     document.getElementById("roman").value = romanNumber;
 
