@@ -94,7 +94,7 @@ const numeroArabico = {
     ]
 };
 
-function romanJs(input) {
+function decimalRomano(input) {
 
     input = input.replace(/[^0-9]/, "");
     if (input == '') return '';
@@ -131,7 +131,7 @@ function romanJs(input) {
 }
 
 document.getElementById("decimal").addEventListener('keyup', function () {
-    var romanNumber = romanJs(this.value);
+    var romanNumber = decimalRomano(this.value);
 
     document.getElementById("roman").value = romanNumber;
 
@@ -139,52 +139,56 @@ document.getElementById("decimal").addEventListener('keyup', function () {
     if (numberCheck == '') return false;
 });
 
-function romanJss(input) {
-
-    input = input.replace(/[^0-9]/, "");
-    if (input == '') return '';
-
-    var number = parseInt(input);
-
-    if (number > 1999) {
-        return "número maximo '1999'";
-    }
 
 
-    //Descobre se é Unidade, Dezena, Centana, Milhar
-    var orderNumber2 = String(input).toUpperCase();
-    var orderLength2 = orderNumber2.length;
 
+function romanoDecimal(input) {
 
-    var unidadeDezenaCentena2 = orderLength2 - 1;
-
-
-    var newOrder2 = '';
-    for (var i = unidadeDezenaCentena2; i >= 0; i--) {
-        newOrder2 = newOrder2+ orderNumber.charAt(i);
-    }
-
-    var finalCast2 = '';
-    for (var i = unidadeDezenaCentena; i >= 0; i--) {
-        var auxVar2 = parseInt(newOrder.charAt(i));
-        finalCast2 = finalCast2 + numeroArabico[i][auxVar2];
-    }
-
-    return finalCast;
-
+    input = input.toUpperCase();
+    input = input.replace(/[0-9]/g, '');
     
+    const algarismos = input.split("");
+    
+    var sum = 0;
+    
+    const convertionRomanToDecimal = {
+      I: 1,
+      V: 5,
+      X: 10,
+      L: 50,
+      C: 100,
+      D: 500,
+      M: 1000
+    };
+    
+    algarismos.forEach((key, index) => {
+      algarismos[index] = convertionRomanToDecimal[key];
+      if (algarismos[index - 1] < algarismos[index]) {
+        sum -= convertionRomanToDecimal[key];
+      } else sum += convertionRomanToDecimal[key];
+    });
+    console.log(sum);
+
 }
 
-document.getElementById("roman").addEventListener('keyup', function () {
-    var decimalNumber = romanJss(this.value);
+document.getElementById("romano").addEventListener('keyup', function () {
+    var decimalNumber = romanoDecimal(this.value);
+    
 
-    document.getElementById("decimal").value = decimalNumber;
+    document.getElementById("arabico").value = decimalNumber;
+    console.log(decimalNumber);
 
-    var numberCheck = this.value.replace(/[^0-9]/, "");
+    var numberCheck = this.value.replace(/[^0-9]/, g, '');
     if (numberCheck == '') return false;
 });
 
+
+
 //var numberToCast = 100;
 //var result = romanJs(numberToCast);
+
+
+
+
 
 
