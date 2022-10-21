@@ -1,71 +1,54 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Conversor Números</title>
+	<link rel="stylesheet" href="/css/conversorNum.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
 	<link rel="icon" type="image/png" href="icon.png" />
 
-
-	
-	<style type="text/css">
-	
-		input{
-			text-align: center;
-		}
-		
-		input[type="text"]{
-			font-size:30px; 
-			font-family: "Cinzel", Cinzel;
-			font-weight: bold;
-			color: #000 !important;
-		}
-		
-		hr{
-			margin-top: 70px;
-		}
-	
-	</style>
 </head>
+
 <body>
 
-<div class="container">
-	<div class="row">
-		<h4>Conversor de Números</h4>
-	</div>
-	
-	<div class="row">
-		<div class="input-field col s12">
-			<label for="decimal" class="active">Número Arábico:</label>
-			<input type="tel" placeholder="Informe um número arábico" id="decimal" autofocus maxlength="4">
+	<div class="container">
+		<div class="row">
+			<h1>CONVERSOR DE NÚMEROS</h1>
 		</div>
-		
-		<div class="input-field col s12">
-			<label for="roman" class="active">Número Romano:</label>
-			<input type="text" class="roman" id="roman" readonly="readonly">
+
+		<div class="row">
+			<div>
+				<label for="decimal" class="active">Número Arábico:</label>
+				<input type="tel" id="decimal" autofocus maxlength="4">
+			</div>
+
+			<div>
+				<label for="roman" class="active">Número Romano:</label>
+				<input type="text" class="roman" id="roman" readonly="readonly">
+			</div>
 		</div>
+
+		<br>
+
+		<div class="row">
+			<div>
+				<label for="roman" class="active">Número Romano:</label>
+				<input type="tel" class="roman" autofocus maxlength="4">
+			</div>
+
+			<div>
+				<label for="decimal" class="active">Numero Arábico:</label>
+				<input type="text" id="decimal" readonly="readonly">
+			</div>
+		</div>
+
 	</div>
 
-	<div class="row">
-		<div class="input-field col s12">
-			<label for="roman" class="active">Número Romano:</label>
-			<input type="tel" placeholder="Informe um número romano" class="roman"autofocus maxlength="4">
-		</div>
-		
-		<div class="input-field col s12">
-			<label for="decimal" class="active">Numero Arábico:</label>
-			<input type="text"  id="decimal" readonly="readonly">
-		</div>
-	</div>
 
 	</div>
-	
-	<hr />
-	
-</div>
 </body>
 <script src="/script.js"></script>
+
 </html>

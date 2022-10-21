@@ -99,3 +99,18 @@ body {
     border-color:  #000; 
     font-style: oblique;
     }
+
+    input{
+        text-align: center;
+    }
+    
+    input[type="text"]{
+        font-size:30px; 
+        font-family: "Cinzel", Cinzel;
+        font-weight: bold;
+        color: #000 !important;
+    }
+    
+    hr{
+        margin-top: 70px;
+    }

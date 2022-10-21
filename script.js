@@ -130,6 +130,15 @@ function romanJs(input) {
     
 }
 
+document.getElementById("decimal").addEventListener('keyup', function () {
+    var romanNumber = romanJs(this.value);
+
+    document.getElementById("roman").value = romanNumber;
+
+    var numberCheck = this.value.replace(/[^0-9]/, "");
+    if (numberCheck == '') return false;
+});
+
 function romanJss(input) {
 
     input = input.replace(/[^0-9]/, "");
@@ -143,11 +152,11 @@ function romanJss(input) {
 
 
     //Descobre se é Unidade, Dezena, Centana, Milhar
-    var orderNumber2 = Number(input).toString();
+    var orderNumber2 = String(input).toUpperCase();
     var orderLength2 = orderNumber2.length;
 
 
-    var unidadeDezenaCentena = orderLength2 - 1;
+    var unidadeDezenaCentena2 = orderLength2 - 1;
 
 
     var newOrder2 = '';
@@ -158,7 +167,7 @@ function romanJss(input) {
     var finalCast2 = '';
     for (var i = unidadeDezenaCentena; i >= 0; i--) {
         var auxVar2 = parseInt(newOrder.charAt(i));
-        finalCast2 = finalCast + numeroArabico[i][auxVar2];
+        finalCast2 = finalCast2 + numeroArabico[i][auxVar2];
     }
 
     return finalCast;
@@ -166,14 +175,16 @@ function romanJss(input) {
     
 }
 
-//var numberToCast = 100;
-//var result = romanJs(numberToCast);
+document.getElementById("roman").addEventListener('keyup', function () {
+    var decimalNumber = romanJss(this.value);
 
-document.getElementById("decimal").addEventListener('keyup', function () {
-    var romanNumber = romanJss(this.value);
-
-    document.getElementById("roman").value = romanNumber;
+    document.getElementById("decimal").value = decimalNumber;
 
     var numberCheck = this.value.replace(/[^0-9]/, "");
     if (numberCheck == '') return false;
 });
+
+//var numberToCast = 100;
+//var result = romanJs(numberToCast);
+
+

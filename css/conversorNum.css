@@ -1,0 +1,22 @@
+body {
+    background-color: #fda400;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+
+input {
+    display: flex;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Cinzel", Cinzel;
+    font-weight: bold;
+    color: #000 !important;
+    border-radius: 3px;
+
+}
