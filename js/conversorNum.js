@@ -101,9 +101,11 @@ function decimalRomano(input) {
 
     var number = parseInt(input);
 
-    if (number > 1999) {
-        return "número maximo '1999'";
+    if (number > 3999) {
+        return "número maximo é de '3999'";
     }
+
+ 
 
 
     //Descobre se é Unidade, Dezena, Centana, Milhar
@@ -132,6 +134,7 @@ function decimalRomano(input) {
 
 document.getElementById("decimal").addEventListener('keyup', function () {
     var romanNumber = decimalRomano(this.value);
+ 
 
     document.getElementById("roman").value = romanNumber;
 
