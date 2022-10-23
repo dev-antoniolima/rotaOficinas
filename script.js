@@ -50,7 +50,7 @@ const numeroRomano = {
 const numeroArabico = {
     //Unidade
     0: [
-        ''	
+        ''
         , '1' 	//I
         , '2'	//II
         , '3'	//III
@@ -63,7 +63,7 @@ const numeroArabico = {
     ]
     //Dezena
     , 1: [
-        ''		
+        ''
         , '10'	//X
         , '20'   //XX
         , '30'  //XXX
@@ -127,7 +127,7 @@ function decimalRomano(input) {
 
     return finalCast;
 
-    
+
 }
 
 document.getElementById("decimal").addEventListener('keyup', function () {
@@ -146,40 +146,41 @@ function romanoDecimal(input) {
 
     input = input.toUpperCase();
     input = input.replace(/[0-9]/g, '');
-    
+    if (input == '') return '';
+
+
+
     const algarismos = input.split("");
-    
-    var sum = 0;
-    
+
+    sum = 0;
+
     const convertionRomanToDecimal = {
-      I: 1,
-      V: 5,
-      X: 10,
-      L: 50,
-      C: 100,
-      D: 500,
-      M: 1000
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000
     };
-    
+
     algarismos.forEach((key, index) => {
-      algarismos[index] = convertionRomanToDecimal[key];
-      if (algarismos[index - 1] < algarismos[index]) {
-        sum -= convertionRomanToDecimal[key];
-      } else sum += convertionRomanToDecimal[key];
+        algarismos[index] = convertionRomanToDecimal[key];
+        if (algarismos[index - 1] < algarismos[index]) {
+            sum -= convertionRomanToDecimal[key];
+        } else sum += convertionRomanToDecimal[key];
     });
-    console.log(sum);
+
+    return sum;
 
 }
 
 document.getElementById("romano").addEventListener('keyup', function () {
     var decimalNumber = romanoDecimal(this.value);
-    
 
     document.getElementById("arabico").value = decimalNumber;
     console.log(decimalNumber);
 
-    var numberCheck = this.value.replace(/[^0-9]/, g, '');
-    if (numberCheck == '') return false;
 });
 
 
